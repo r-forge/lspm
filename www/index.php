@@ -43,7 +43,38 @@ echo $contents; } ?>
 
 <!-- end of project description -->
 
-<p> No content added. </p>
+<pre>
+# Load the LSPM package
+library(LSPM)
+
+# Multiple strategy example (data found on pp. 84-87)
+trades <- cbind(
+ c(-150,-45.33,-45.33,rep(13,5),rep(79.67,3),136),
+ c(253,-1000,rep(-64.43,3),253,253,448,rep(-64.43,3),253),
+ c(533,220.14,220.14,-500,533,220.14,799,220.14,-325,220.14,533,220.14) )
+probs <- c(rep(0.076923077,2),0.153846154,rep(0.076923077,9))
+ 
+# Create a Leverage Space Portfolio object
+port <- lsp(trades,probs)
+
+# DEoptim parameters (see ?DEoptim)
+# NP=30        (10 * number of strategies)
+# itermax=100  (maximum number of iterations)
+DEctrl <- list(NP=30,itermax=100)
+
+# Unconstrainted Optimal f (results on p. 87)
+res <- optimalf(port,control=DEctrl)
+
+# Drawdown-constrained Optimal f (results on p. 137)
+# Since horizon=12, this optimization will take about an hour
+res <- optimalf(port,probDrawdown,0.1,DD=0.2,horizon=12,calc.max=4,control=DEctrl)
+
+# Ruin-constrained Optimal f
+res <- optimalf(port,probRuin,0.1,DD=0.2,horizon=4,control=DEctrl)
+
+# Drawdown-constrained Optimal f
+res <- optimalf(port,probDrawdown,0.1,DD=0.2,horizon=4,control=DEctrl)
+</pre>
 
 <p> The <strong>project summary page</strong> you can find <a href="http://<?php echo $domain; ?>/projects/<?php echo $group_name; ?>/"><strong>here</strong></a>. </p>
 
