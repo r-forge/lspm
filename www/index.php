@@ -43,9 +43,9 @@ echo $contents; } ?>
 
 <!-- end of project description -->
 <div>
-These examples are based on revision 26 from r-forge and <u>will not work under earlier revisions</u> (and may not work with later revisions). LSPM is still in <b>very</b> alpha status.&nbsp; Expect things to change, perhaps significantly.<br /> 
+These examples are based on revision 31 from r-forge and <u>will not work under earlier revisions</u> (and may not work with later revisions). LSPM is still in <b>very</b> alpha status.&nbsp; Expect things to change, perhaps significantly.<br /> 
 <br /> 
-These examples were run using <a href="http://cran.r-project.org/src/contrib/Archive/DEoptim/DEoptim_1.3-3.tar.gz">DEoptim_1.3-3</a> (and LSPM revision 26 depends on that version).&nbsp; We are working with the DEoptim authors to address issues with more recent versions of DEoptim.&nbsp; LSPM will use the most recent version of DEoptim as soon as the issues are resolved.<br /> 
+These examples were run using code from DEoptim_1.3-3 that has been bundled inside LSPM.&nbsp; We are working with the DEoptim authors to address issues with more recent versions of DEoptim.&nbsp; LSPM will use the most recent version of DEoptim as soon as the issues are resolved.<br /> 
 <br /> 
 The first two examples are taken from <a href="http://www.amazon.com/gp/product/0470455950?ie=UTF8&amp;tag=fotr09-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0470455950">Vince, Ralph (2009). The Leverage Space Trading Model. New York: John Wiley &amp; Sons, Inc.</a><img alt="" border="0" class=" kkhzmhumvwvpsurumhgy kkhzmhumvwvpsurumhgy kkhzmhumvwvpsurumhgy kkhzmhumvwvpsurumhgy" height="1" src="http://www.assoc-amazon.com/e/ir?t=fotr09-20&amp;l=as2&amp;o=1&amp;a=0470455950" style="border: medium none ! important; margin: 0px ! important;" width="1" />  The results will not match the book because of differences between optimization via DEoptim and Ralph's genetic algorithm implementation.&nbsp; Ralph believes his genetic algorithm is getting hung up on a local maximum, whereas DEoptim is closer to the global solution.<br /> 
 <ol></ol><br /> 
